@@ -114,23 +114,22 @@ schedule命令决定了会如何划分
 
 ### exploratory decomposition
 
+在状态空间中搜索
+
 ### speculative decomposition
 
+#### Conservative approach
 
+task完全独立时才视为独立（并行性差）
 
+#### Optimistic (speculative) approach
 
+task有可能不独立，但也视为独立（可能出错）
 
+需要回滚机制
 
-
-
-
-![image-20200304091803525](./typora-user-images/image-20200304091803525.png)
-
-taskwait 只等自己创建的子任务（“自己”是谁？）
-
-
-
-
-
-![image-20200304094052311](./typora-user-images/image-20200304094052311.png)
-
+> **Speculative vs exploratory**
+>
+> **Speculative**：工作量>=串行
+>
+> **exploratory**：工作量>=<串行 均有可能
