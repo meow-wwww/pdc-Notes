@@ -12,7 +12,7 @@
 
 如果用一般的划分方式：iteration按照thread的数目被划分
 
-<img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305175435380.png" alt="image-20200305175435380" style="zoom: 33%;" />
+<img src="./typora-user-images/image-20200305175435380.png" alt="image-20200305175435380" style="zoom: 33%;" />
 
 循环体被划分的方式（Loop Scheduling）：
 
@@ -31,7 +31,7 @@ schedule命令决定了会如何划分
 - 用在==每个iteration工作量相近==且==可预测==的情况下效果最佳
 - 开销低，可能造成负载不平衡
 
-<img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305182517683.png" alt="image-20200305182517683" style="zoom: 33%;" />
+<img src="./typora-user-images/image-20200305182517683.png" alt="image-20200305182517683" style="zoom: 33%;" />
 
 #### 动态调度
 
@@ -41,7 +41,7 @@ schedule命令决定了会如何划分
 - 更高的线程开销，可以减少负载不平衡
 - 用于==不可预测==或==多样化==的工作中效果最佳
 
-<img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305182759721.png" alt="image-20200305182759721" style="zoom:33%;" />
+<img src="./typora-user-images/image-20200305182759721.png" alt="image-20200305182759721" style="zoom:33%;" />
 
 #### Guided调度
 
@@ -54,7 +54,7 @@ schedule命令决定了会如何划分
 - Chunk表示每次分配的迭代次数的最小值，由于每次分配的迭代次数会逐渐减少，较少到size时，将不再减少。<u>如果不知道size的大小，那么默认size为1，即一直减少到1。</u>
 - 在计算逐渐耗时的时候使用，效果最佳，可以减少调度开销
 
-<img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305202447212.png" alt="image-20200305202447212" style="zoom: 33%;" />
+<img src="./typora-user-images/image-20200305202447212.png" alt="image-20200305202447212" style="zoom: 33%;" />
 
 ## 划分技术（续）
 
@@ -97,7 +97,7 @@ schedule命令决定了会如何划分
 
 - 创建任务&认领任务
 
-  ![image-20200305205947419](/Users/apple/Library/Application Support/typora-user-images/image-20200305205947419.png)
+  ![image-20200305205947419](./typora-user-images/image-20200305205947419.png)
 
   ==$\uparrow\uparrow\uparrow$注意此图中task的作用域只有process(p)一个语句==
 
@@ -124,7 +124,7 @@ schedule命令决定了会如何划分
 
 
 
-![image-20200304091803525](/Users/apple/Library/Application Support/typora-user-images/image-20200304091803525.png)
+![image-20200304091803525](./typora-user-images/image-20200304091803525.png)
 
 taskwait 只等自己创建的子任务（“自己”是谁？）
 
@@ -132,5 +132,5 @@ taskwait 只等自己创建的子任务（“自己”是谁？）
 
 
 
-![image-20200304094052311](/Users/apple/Library/Application Support/typora-user-images/image-20200304094052311.png)
+![image-20200304094052311](./typora-user-images/image-20200304094052311.png)
 

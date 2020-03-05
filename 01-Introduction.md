@@ -14,23 +14,23 @@
 
 多芯片：每个处理器芯片（chip）有一个自己的CPU和自己的cache，通过总线连接到共享的内存上
 
-![image-20200220001533477](/Users/apple/Library/Application Support/typora-user-images/image-20200220001533477.png)
+![image-20200220001533477](./typora-user-images/image-20200220001533477.png)
 
 #### 现代处理器：The Chip Multiprocessor (CMP)（多处理器）
 
 所有的CPU和他们各自的cache都在同一个芯片（chip）上
 
-![image-20200305092414030](/Users/apple/Library/Application Support/typora-user-images/image-20200305092414030.png)
+![image-20200305092414030](./typora-user-images/image-20200305092414030.png)
 
 #### 各种各样的处理器
 
 **2-Socket 4-channel DDR3 (NUMA)**
 
-![image-20200305092823112](/Users/apple/Library/Application Support/typora-user-images/image-20200305092823112.png)
+![image-20200305092823112](./typora-user-images/image-20200305092823112.png)
 
 **显卡 Titan X**
 
-![image-20200305093048063](/Users/apple/Library/Application Support/typora-user-images/image-20200305093048063.png)
+![image-20200305093048063](./typora-user-images/image-20200305093048063.png)
 
 **AlphaGo**
 
@@ -50,7 +50,7 @@
 
 阻碍：**Power Barrier：if we keep frequency scaling, power goes up exponentially**
 
-![image-20200305095144945](/Users/apple/Library/Application Support/typora-user-images/image-20200305095144945.png)
+![image-20200305095144945](./typora-user-images/image-20200305095144945.png)
 
 那么，如何才能制造更快的处理器？
 
@@ -96,7 +96,7 @@
   $$
   Speedup=\frac{1\,thread\,execution\,time}{n \,thread\, execution\,time}
   $$
-  <img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305101109576.png" alt="image-20200305101109576" style="zoom: 33%;" />
+  <img src="./typora-user-images/image-20200305101109576.png" alt="image-20200305101109576" style="zoom: 33%;" />
 
 - 由Amdahl's Law，看起来并发编程的效率会随着处理器数量的增加而增大，但实际上并不是
 
@@ -128,7 +128,7 @@
 
 ### 并发编程的工具 
 
-![image-20200220104426612](/Users/apple/Library/Application Support/typora-user-images/image-20200220104426612.png)
+![image-20200220104426612](./typora-user-images/image-20200220104426612.png)
 
 
 

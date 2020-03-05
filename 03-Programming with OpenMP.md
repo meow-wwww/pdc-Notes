@@ -8,7 +8,7 @@
 
 ### 任务依赖图&任务通信图
 
-<img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305114542682.png" alt="image-20200305114542682" style="zoom:33%;" />
+<img src="./typora-user-images/image-20200305114542682.png" alt="image-20200305114542682" style="zoom:33%;" />
 
 #### 任务依赖图——==控制依赖==
 
@@ -20,7 +20,7 @@
 
 一个例子：矩阵与向量相乘
 
-![image-20200305120344389](/Users/apple/Library/Application Support/typora-user-images/image-20200305120344389.png)
+![image-20200305120344389](./typora-user-images/image-20200305120344389.png)
 
 任务划分（粒度）的影响：
 
@@ -57,7 +57,6 @@
   Speedup=\frac{T_1}{T_p}
   $$
   
-
 - 效率
   $$
   parallel\,efficiency=\frac{T_1}{pT_p}
@@ -130,9 +129,9 @@ SPMD风格的编程
 - parallel下的内容，是==多个线程同步执行==的，==会有重复==
 - 但如果parallel下有for，则==for下的内容只执行一次==，但==瓜分给不同线程==
 
-<img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305164729790.png" alt="image-20200305164729790" style="zoom: 33%;" />
+<img src="./typora-user-images/image-20200305164729790.png" alt="image-20200305164729790" style="zoom: 33%;" />
 
-<img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305164758567.png" alt="image-20200305164758567" style="zoom:33%;" />
+<img src="./typora-user-images/image-20200305164758567.png" alt="image-20200305164758567" style="zoom:33%;" />
 
 #### 用在parallel下的几个指令
 
@@ -163,7 +162,7 @@ SPMD风格的编程
 - 先用sections表明要被划分的区域
   - 它下面的块里，每个section指令划分出一块
 
-<img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305145946238.png" alt="image-20200305145946238" style="zoom: 50%;" />
+<img src="./typora-user-images/image-20200305145946238.png" alt="image-20200305145946238" style="zoom: 50%;" />
 
 #### reduction
 
@@ -182,7 +181,7 @@ SPMD风格的编程
 
   就是该种运算的单位元
 
-  ![image-20200305172133422](/Users/apple/Library/Application Support/typora-user-images/image-20200305172133422.png)
+  ![image-20200305172133422](./typora-user-images/image-20200305172133422.png)
 
 - reduction时声明了运算类型和操作数组，编程时不能改成别的。初值是根据你的声明选的，可能与实际运算对应的初值不符，造成错误
 

@@ -6,7 +6,7 @@
 
 ### 计算机体系结构
 
-![image-20200305103250634](/Users/apple/Library/Application Support/typora-user-images/image-20200305103250634.png)
+![image-20200305103250634](./typora-user-images/image-20200305103250634.png)
 
 ### 三种并发编程模型
 
@@ -18,11 +18,11 @@
 
 出发点：每个处理器都能直接访问到任何内存地址
 
-![image-20200305103633680](/Users/apple/Library/Application Support/typora-user-images/image-20200305103633680.png)
+![image-20200305103633680](./typora-user-images/image-20200305103633680.png)
 
 > 一种特殊的设计：**Non-uniform Memory Access ==(NUMA)==**
 >
-> ![image-20200305103909404](/Users/apple/Library/Application Support/typora-user-images/image-20200305103909404.png)
+> ![image-20200305103909404](./typora-user-images/image-20200305103909404.png)
 >
 > 内存访问平均的系统存在问题：可扩展性
 >
@@ -52,29 +52,29 @@
 
 根据指令流与数据流的数目对机器进行分类：
 
-![image-20200305105428848](/Users/apple/Library/Application Support/typora-user-images/image-20200305105428848.png)
+![image-20200305105428848](./typora-user-images/image-20200305105428848.png)
 
 编程模型都趋于SPMD
 
-<img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305105600406.png" alt="image-20200305105600406" style="zoom:25%;" /><img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305105618211.png" alt="image-20200305105618211" style="zoom:25%;" />
+<img src="./typora-user-images/image-20200305105600406.png" alt="image-20200305105600406" style="zoom:25%;" /><img src="./typora-user-images/image-20200305105618211.png" alt="image-20200305105618211" style="zoom:25%;" />
 
-<img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305105651024.png" alt="image-20200305105651024" style="zoom:25%;" /><img src="/Users/apple/Library/Application Support/typora-user-images/image-20200305105720243.png" alt="image-20200305105720243" style="zoom:25%;" />
+<img src="./typora-user-images/image-20200305105651024.png" alt="image-20200305105651024" style="zoom:25%;" /><img src="./typora-user-images/image-20200305105720243.png" alt="image-20200305105720243" style="zoom:25%;" />
 
 对MIMD的进一步划分
 
-![image-20200305105947955](/Users/apple/Library/Application Support/typora-user-images/image-20200305105947955.png)
+![image-20200305105947955](./typora-user-images/image-20200305105947955.png)
 
 #### Shared-Memory Architecture
 
-![image-20200305110058858](/Users/apple/Library/Application Support/typora-user-images/image-20200305110058858.png)
+![image-20200305110058858](./typora-user-images/image-20200305110058858.png)
 
 #### Distributed-Memory Architecture
 
-![image-20200305110126073](/Users/apple/Library/Application Support/typora-user-images/image-20200305110126073.png)
+![image-20200305110126073](./typora-user-images/image-20200305110126073.png)
 
 #### Hybrid Architecture
 
-![image-20200305110154700](/Users/apple/Library/Application Support/typora-user-images/image-20200305110154700.png)
+![image-20200305110154700](./typora-user-images/image-20200305110154700.png)
 
 ## 设计并行程序的思路
 
@@ -86,7 +86,7 @@
 
 ### Foster’s Design Methodology
 
-![image-20200305110520122](/Users/apple/Library/Application Support/typora-user-images/image-20200305110520122.png)
+![image-20200305110520122](./typora-user-images/image-20200305110520122.png)
 
 #### Partitioning
 
