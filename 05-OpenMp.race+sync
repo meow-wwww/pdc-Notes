@@ -30,17 +30,18 @@ OpenMP中的互斥相关操作：
 
 ## 3) critical写法优化的例子
 
-![1583483284446](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1583483284446.png)
+
+![image-20200305092414030](./typora-user-images/1583483284446.png)
 
  critical至少有两个缺点：1)同一时刻只有一个人在加法  2) critical和lock都有overhead. critical保护了整句话，但等式右边乘法除法除法不需要被保护，浪费了
 
-![1583483298769](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1583483298769.png)
+![image-20200305092414030](./typora-user-images/1583483298769.png)
 
-![1583483315857](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1583483315857.png)
+![image-20200305092414030](./typora-user-images/1583483315857.png)
 
 数一数进出了几次critical section: solution2：进出了n次。solution3：进入了num_thread次！num_thread一般更小。solution3通过引入局部变量, 让进出critical的overhead变小.  
 
-![1583483333527](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1583483333527.png)
+![image-20200305092414030](./typora-user-images/1583483333527.png)
 
  reduce更好了一点,它的累加可以不是sequntial的
 
@@ -56,10 +57,10 @@ OpenMP中的互斥相关操作：
 
 flush使用的例子:
 
-![1583484131982](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1583484131982.png)
+![image-20200305092414030](./typora-user-images/1583484131982.png)
 
 flush主要用于不适用复杂pragma,  但想要保证和memory有关的一些顺序时(避免编译器的优化和处理器的乱序执行影响).
 
 ## 5) 总结
 
-![1583484280104](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1583484280104.png)
+![image-20200305092414030](./typora-user-images/1583484280104.png)
