@@ -1,6 +1,10 @@
 # Lecture 5 
 
 这一讲主要介绍了OpenMP中的三种同步机制Barrier、Mutual Exclusion、Memory fence, 介绍了它们各自的作用以及在OpenMP中的写法，并对它们进行了对比。
+Barrier：不同线程对同一段代码的同步
+Mutual Exclusion：不同线程对同一个共享资源的互斥
+Memory fence: *单一线程*的和memory访问顺序
+
 
 ## 1) Barrier
 
@@ -59,8 +63,11 @@ flush使用的例子:
 
 ![1583484131982](./typora-user-images/1583484131982.png)
 
-flush主要用于不适用复杂pragma,  但想要保证和memory有关的一些顺序时(避免编译器的优化和处理器的乱序执行影响).
+flush主要用于不使用复杂pragma,  但想要保证和memory有关的一些顺序时(避免编译器的优化和处理器的乱序执行影响).
 
 ## 5) 总结
+Barrier：不同线程对同一段代码的同步
+Mutual Exclusion：不同线程对同一个共享资源的互斥
+Memory fence: *单一线程*的和memory访问顺序
 
 ![1583484280104](./typora-user-images/1583484280104.png)
