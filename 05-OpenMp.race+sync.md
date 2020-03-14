@@ -27,7 +27,7 @@ Lock: 一类操作，控制对共享资源的访问。（操作系统实现的�
 
 OpenMP中的互斥相关操作：
 
-1. #pragma omp critical ：让下一部分代码只能同时被一个线程执行，实现了互斥。缺点：1)critical部分只能顺序执行。2)需要程序员确定critical section（对共享资源的读和写都要保护）。
+1. #pragma omp critical ：==让下一部分代码只能同时被一个线程执行==，实现了互斥。缺点：1)critical部分只能顺序执行，它保护整个语句的所有过程。2)需要程序员确定critical section（对共享资源的读和写都要保护）。
 2. omp_set_lock(&hash_lock[i])：只对该数据lock，更高效（critical中对code进行了lock）。
 3. #pragma omp atomic：一种特殊的critical，只支持++、--、+=、-=、*=等。只作用于单个语句. 即使一条语句很复杂,只有最外层的读取左边值+做运算+写回这三个操作是原子的.
 
@@ -40,7 +40,7 @@ OpenMP中的互斥相关操作：
 
 ![1583483284446](./typora-user-images/1583483284446.png)
 
- critical至少有两个缺点：1)同一时刻只有一个人在加法  2) critical和lock都有overhead. critical保护了整句话，但等式右边乘法除法除法不需要被保护，浪费了
+ critical至少有两个缺点：1)同一时刻只有一个人在加法  2) critical和lock都有overhead. critical保护了整句话，但等式右边乘法除法不需要被保护，浪费了
 
 ![1583483298769](./typora-user-images/1583483298769.png)
 

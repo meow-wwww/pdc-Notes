@@ -39,9 +39,11 @@ ncclReduce()
 ncclScatter() //AllGather反过来
 ```
 
+![image-20200314104216154](./typora-user-images/image-20200314104216154.png)
+
 `4 APIs + send/recv`
 
-建立一个环境`MPI_Init; MPI_Finalize`，总共多少线程 `MPI_Comm_size`，自己是第几个进程 `MIP_Comm_rank`
+建立/终止一个环境`MPI_Init; MPI_Finalize`，总共多少线程 `MPI_Comm_size`，自己是第几个进程 `MIP_Comm_rank`
 
 ### 编译运行
 
@@ -49,6 +51,7 @@ ncclScatter() //AllGather反过来
 
 ```bash
 mpicc -o foo foo.c
+mpic++ -o bar bar.cpp
 mpicc --show #实际上调了gcc，链接时加了一些库，是一个wrapper
 ```
 
@@ -88,6 +91,7 @@ data:(address, count, datatype)
 //复杂一点的数据类型，如链表（包含下一个的地址），这个就对MPI意义不大，指的是原来链表的地址
 message:(data, tag)
 //tag粗略认为是data的名字
+//两个特殊的tag:MPI_ANY_SOURCE和MPI_ANY_TAG
 ```
 
 ### Send & Receive
@@ -96,18 +100,22 @@ message:(data, tag)
 - 有缓存
 - 非阻塞：直接返回
 
+https://blog.csdn.net/weixin_38087754/article/details/104726968有详细一些的介绍
+
 ```c
 int MPI_Send(void *buf, int count, MPI_Datatype datatype, 
              int dest, int tag, MPI_Comm comm)
 //前四个是上面说的data。comm：如果所有进程的一个小组之间交互，可以简化进程号码。
 int MPI_Recv(void *buf, int count, MPI_Datatype datatype, 
              int source, int tag, MPI_Comm comm, MPI_Status *status)
-//MPI_Send，有buffer但程序员不可见，return until you can use the send buffer
+/*****blocking*****/
+//MPI_Send，有buffer但程序员不可见，return until you can use the send buffer(blocking)
 //MPI_Bsend，buffer由用户提供
-//MPI_Ssend，确定接收方已经调用了Srecieve，有同步含义
-//MPI_Rsend，确保对应的Rrecieve已经被调用
-    
-//MPI_Isend，无阻塞，但通过 MPI_Test()检查buffer可被安全修改
+//MPI_Ssend，确定接收方已经调用了MPI_Srecive，有同步含义
+//MPI_Rsend，程序员需要确保对应的Rrecieve已经被调用(冒险，但降低开销)
+
+/*****non-blocking*****/
+//MPI_Isend，无阻塞，但不能马上改buffer的内容，需要通过 MPI_Test()检查buffer可被安全修改/MPI_Wait()
 ```
 
 ### MPI实现集体通信
