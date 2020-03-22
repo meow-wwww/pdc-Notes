@@ -53,7 +53,7 @@
 
 ## 点对点消息传输时间建模
 
-* Setup time($t_s$) 只有自身决定的时间
+* Setup time($t_s$) 只有自身决定的时间（与message大小无关）
   * 准备数据的时间
   * routing算法的时间
   * 建立连接的时间
@@ -111,10 +111,14 @@ $$
 T = (t_s + m t_w)(p-1)
 $$
 mesh:
+
+![image-20200321092943110](typora-user-images/image-20200321092943110.png)
 $$
 T = 2t_s(\sqrt p -1 ) + m t_w (p - 1)
 $$
-hypercube 
+hypercube
+
+![image-20200321093113891](typora-user-images/image-20200321093113891.png)
 $$
 \begin{align}
 T &= \sum_{i=1}^{\log p} (t_s + 2^{i-1}t_w m)
@@ -140,7 +144,7 @@ $$
 
 时间分析：
 $$
-T = 
+T =
 $$
 
 ### Mesh
