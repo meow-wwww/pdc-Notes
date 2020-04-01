@@ -60,11 +60,11 @@ __kernel void simpleMultiply(
 
 独立的计算单元阵列Compute Units，用大量的核，缓存尽可能少。有很高的带宽。 核与内存之间不需要保持全局的同步。基于SIMD，每个核平摊一部分。线程上下文切换，不能都放到内存里，有很多register file存储线程状态，保证切换更快。
 
-<img src=".\compute_unit.jpg" width="400px" /> 一个compute unit模型，scratchpad mem和L1一样快
+<img src="typora-user-images/compute_unit.jpg" width="400px" /> 一个compute unit模型，scratchpad mem和L1一样快
 
 work-items自动地组合成硬件的thread，AMD-wavefronts，64个一组。 NVIDIA-warps，32个一组。SIMD有16路，而warp比物理SIMD宽，则连续两次在SIMD上执行一条指令（SIMT，与SIMD不同不在一个周期上做完）。
 
-<img src=".\SIMT.jpg" width="600px" />
+<img src="typora-user-images/SIMT.jpg" width="600px" />
 
 ## thread structure
 
@@ -78,7 +78,7 @@ work-items自动地组合成硬件的thread，AMD-wavefronts，64个一组。 NV
 
 ### memory hierarchy
 
-<img src=".\memory.jpg" width="400px" />比较特殊：constant，只读不写。local比global快
+<img src="typora-user-images/memory.jpg" width="400px" />比较特殊：constant，只读不写。local比global快
 
 ### memory management
 
@@ -90,7 +90,7 @@ work-items自动地组合成硬件的thread，AMD-wavefronts，64个一组。 NV
 
 可调度单元(schedulable unit)为warp/wavefront，硬件将work groups集成为wavefront(x轴优先)，同一个wavefront中的线程执行同一条指令。线程有独立的寄存器状态，可自由执行不同的控制逻辑。
 
-<img src=".\work_item_sche.jpg" width="350px" />
+<img src="typora-user-images/work_item_sche.jpg" width="350px" />
 
 ### Wavefront Scheduling - AMD
 
@@ -126,7 +126,7 @@ void addData256(
 
 用if/else分支为不同tid分配任务，两种方式开销不同。第一种奇偶线程执行不同任务，第二种前64/后64执行不同任务。对于第一种，GPU设置条件码`Predicate = True for threads 0,2,4,...` `Predicate = False for threads 1,3,5,...`，两种分支的 Predication 不同，最后只保留预测正确的分支。Case 1中，每个workfront都要执行if/else，时间是两倍，每次调度只有一半的结果有用（无效结果被mask掉）；Case 2中，一个workfront执行if分支，另一个执行else。
 
-<img src=".\control_flow1.jpg" width="700px" />
+<img src="typora-user-images/control_flow1.jpg" width="700px" />
 
 ### Pitfalls of using Wavefront
 
@@ -144,7 +144,7 @@ $$
 $$
 burst，8B地址，256*32B有用。
 
-<img src=".\bus_addressing.jpg" width="600px" />
+<img src="typora-user-images/bus_addressing.jpg" width="600px" />
 
 ## Local memory
 
@@ -152,6 +152,6 @@ burst，8B地址，256*32B有用。
 
 连续的data存储在连续的bank当中，因此连续的访问不会造成bank conflicts。如果有冲突则造成latency。每个bank可能只有1/2个读口，1个写口。如果0-7线程访问同一个memory bank，则只需要一次处理时间，将这个data广播给线程。
 
-<img src="memory_conflicts1.jpg" width="400px">延迟是连续访问的三倍。
+<img src="typora-user-images/memory_conflicts1.jpg" width="400px">延迟是连续访问的三倍。
 
 ## :question: lockstep​
