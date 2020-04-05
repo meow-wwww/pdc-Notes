@@ -1,7 +1,5 @@
 # Decomposition Techniques
 
-[TOC]
-
 ## 划分技术
 
 ##### 划分的粒度

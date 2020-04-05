@@ -2,8 +2,6 @@
 
 # 03 Programming with OpenMP
 
-[TOC]
-
 ## 基础概念
 
 ### 任务依赖图&任务通信图

@@ -1,7 +1,5 @@
 # 01 Introduction
 
-[TOC]
-
 ### 单处理器
 
 一个CPU，关联着它的cache
