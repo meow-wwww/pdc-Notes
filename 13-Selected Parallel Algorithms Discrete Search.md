@@ -24,7 +24,7 @@ BFS：扩展分支前会判断哪个子树更有希望（从根开始判断、�
 
 Branching factor (b): the (average) number of children at each node 考虑了剪枝之后的平均扩展度
 
-![image-20200415081210579](C:\Users\陈宇静\AppData\Roaming\Typora\typora-user-images\image-20200415081210579.png)
+![image-20200415081210579](./typora-user-images/image-20200415081210579.png)
 
 ### Parallel DFS
 
@@ -59,7 +59,7 @@ Branching factor (b): the (average) number of children at each node 考虑了剪
 - Half-split：直接均分（理想中的状态，但现实中不存在）
 - Cutoff depth：避免分配太小的子树
 
-![image-20200415083818099](C:\Users\陈宇静\AppData\Roaming\Typora\typora-user-images\image-20200415083818099.png)
+![image-20200415083818099](./typora-user-images/image-20200415083818099.png)
 
 越靠近栈底，子树可能越大，因此可以把栈底的一些节点间隔分配出去（如果分配连续几个节点很容易把小的几个子树分配给同一个处理器，导致下一次分配的不均衡）
 
@@ -100,9 +100,9 @@ Random Polling：
 - 最坏情况下V(p)无上限（即某一个进程一直没有被请求到），一般用平均情况
 - F(i,p)：i表示已被请求的进程数，p表示总进程数（p-i没被请求）
 - f(i,p)：F(i,p)到F(p,p)的平均请求数，我们要求的是f(0,p)
-- ![image-20200415091932900](C:\Users\陈宇静\AppData\Roaming\Typora\typora-user-images\image-20200415091932900.png)
+- ![image-20200415091932900](./typora-user-images/image-20200415091932900.png)
 
-- ![image-20200415092046727](C:\Users\陈宇静\AppData\Roaming\Typora\typora-user-images\image-20200415092046727.png)
+- ![image-20200415092046727](./typora-user-images/image-20200415092046727.png)
 
 ## Best-First Search
 
