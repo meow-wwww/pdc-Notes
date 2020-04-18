@@ -30,7 +30,7 @@ OpenCL旨在实现异构设备上的portable并行计算。portable现实目前�
 
 ## SIMD讨论
 
-![1587186524580](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1587186524580.png)
+![1587186524580](./typora-user-images/1587186524580.png)
 
 多个计算单元（ALU/PE）用不同data执行同一条指令。定义计算单元数量为width。
 
@@ -42,14 +42,14 @@ OpenCL旨在实现异构设备上的portable并行计算。portable现实目前�
 
 ## OpenCL Platform Model
 
-![1587186098599](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1587186098599.png)
+![1587186098599](./typora-user-images/1587186098599.png)
 
 上图中，线条上面的是OpenCL部分，下面是device部分。
 
 每个device有自己的compiler，opencl其实是定义了device和host之间的。
 各个硬件自己把source变成bin。compiler是每个device的厂商自己定义的!
 
-![1587187063568](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1587187063568.png)
+![1587187063568](./typora-user-images/1587187063568.png)
 
 模型定义：一个host有多个device，每个device 有多个compute unit，每个unit有多个PE ，每个PE有自己的PC
 
@@ -72,7 +72,7 @@ executing the kernel:  运行一个kernel时要specify的内容有： kernel, ar
 
 ## OpenCL流程（略讲）
 
-![1587194033079](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1587194033079.png)
+![1587194033079](./typora-user-images/1587194033079.png)
 
 0. 初始化device。声明context, 选择一个context，通过clCreateCommandQueue声明一个command queue
 1. create buffers。在device端建立buffer，把input data通过clEnqueueWriteBuffer传到device端
@@ -88,9 +88,9 @@ executing the kernel:  运行一个kernel时要specify的内容有： kernel, ar
 
 ## work-item模型
 
-![1587196377122](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1587196377122.png)
+![1587196377122](./typora-user-images/1587196377122.png)
 
 ## memory模型
 
-![1587196478653](C:\Users\Thinkpad\AppData\Roaming\Typora\typora-user-images\1587196478653.png)
+![1587196478653](./typora-user-images/1587196478653.png)
 
