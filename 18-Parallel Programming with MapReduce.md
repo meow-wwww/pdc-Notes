@@ -16,7 +16,7 @@
 
 如果编号编得好，那么相邻编号的神经元有链接，则主对角线、副对角线有值，而偏离对角线的则表示有分叉。如果没有分叉，是一条链，则只有主对角线、副对角线有值。
 
-![image-20200515102550831](C:\Users\陈宇静\AppData\Roaming\Typora\typora-user-images\image-20200515102550831.png)
+![image-20200515102550831](./typora-user-images/image-20200515102550831.png)
 
 神经元可以抽象为树，根结点编号为0，以深度优先的顺序编号。
 
@@ -64,7 +64,7 @@ Reduce：输入一组key、value，输出一组value
 
 ### 例：word counting
 
-![image-20200515112709478](C:\Users\陈宇静\AppData\Roaming\Typora\typora-user-images\image-20200515112709478.png)
+![image-20200515112709478](./typora-user-images/image-20200515112709478.png)
 
 Reduce部分前按照key分类（group by key）
 
